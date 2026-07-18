@@ -1,0 +1,5 @@
+.env
+Gemini API Key.txt
+__pycache__/
+*.pyc
+.vscode/
