@@ -87,8 +87,9 @@ Keep the response concise and professional.
     try:
         response = client.models.generate_content(
             model=model_name,
-            contents=prompt,
+            contents=prompt
         )
+        text = response.text
     except Exception as exc:
         return (
             "### Gemini explanation unavailable\n\n"
