@@ -122,7 +122,8 @@ st.divider()
 # -----------------------------
 analyze = st.button(
     "🚀 Analyze Resume",
-    use_container_width=True
+    # use_container_width=True
+    width="stretch"
 )
 
 # -----------------------------
@@ -246,7 +247,8 @@ if analyze:
 
         fig = create_gauge(overall_score)
 
-        st.plotly_chart(fig, use_container_width=True)
+        # st.plotly_chart(fig, use_container_width=True)
+        st.plotly_chart(fig, width="stretch")
         
         df = pd.DataFrame({
 
