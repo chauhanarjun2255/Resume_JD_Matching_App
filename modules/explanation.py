@@ -18,7 +18,6 @@ def get_explanation_model():
 
     try:
         from google.generativeai import genai
-        import streamlit as st
     except ImportError as exc:
         raise ImportError(
             "Could not import the Gemini SDK. Install the supported "
