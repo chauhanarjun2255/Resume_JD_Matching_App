@@ -17,7 +17,7 @@ def get_explanation_model():
         raise RuntimeError("GEMINI_API_KEY is not set.")
 
     try:
-        from google.generativeai import genai
+        from google import genai
     except ImportError as exc:
         raise ImportError(
             "Could not import the Gemini SDK. Install the supported "
