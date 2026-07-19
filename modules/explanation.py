@@ -17,14 +17,15 @@ def get_explanation_model():
         raise RuntimeError("GEMINI_API_KEY is not set.")
 
     try:
-        from google import genai
+        from google.generativeai import genai
+        import streamlit as st
     except ImportError as exc:
         raise ImportError(
             "Could not import the Gemini SDK. Install the supported "
             "'google-genai' package with: pip install -U google-genai"
         ) from exc
 
-    return genai.Client(api_key=api_key)
+    return genai.Client(api_key=st.secrets["GEMINI_API_KEY"])
 
 
 def generate_explanation(
