@@ -17,6 +17,7 @@ def get_explanation_model():
         "GEMINI_API_KEY",
         os.getenv("GEMINI_API_KEY")
     )
+    st.write("API key loaded:", bool(api_key))
     
     # api_key = os.getenv("GEMINI_API_KEY")
     if not api_key:
