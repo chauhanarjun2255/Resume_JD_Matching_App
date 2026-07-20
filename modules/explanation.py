@@ -31,10 +31,8 @@ def get_explanation_model():
             "'google-genai' package with: pip install -U google-genai"
         ) from exc
 
-    return genai.Client(
-        api_key=st.secrets["GEMINI_API_KEY"]
-    )
-
+    return genai.Client(api_key=api_key)
+    # api_key=st.secrets["GEMINI_API_KEY"]
 
 def generate_explanation(
     resume_text,
