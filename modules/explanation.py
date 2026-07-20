@@ -3,7 +3,7 @@ import streamlit as st
 from google import genai
 from dotenv import load_dotenv
 
-load_dotenv('.env.example')
+load_dotenv()
 
 def get_explanation_model():
     """Create a Gemini client lazily so app startup stays fast.
