@@ -10,7 +10,11 @@ def get_explanation_model():
     if "GEMINI_API_KEY" in st.secrets:
         api_key = st.secrets["GEMINI_API_KEY"]
     else:
-        api_key = os.getenv("GEMINI_API_KEY")
+        # api_key = os.getenv("GEMINI_API_KEY")
+        api_key = st.secrets.get(
+            "GEMINI_API_KEY",
+            os.getenv("GEMINI_API_KEY")
+        )
     
     # api_key = os.getenv("GEMINI_API_KEY")
     if not api_key:
