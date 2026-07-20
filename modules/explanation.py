@@ -1,8 +1,9 @@
 import os
 import streamlit as st
+from google import genai
 from dotenv import load_dotenv
 
-load_dotenv()
+load_dotenv('.env.example')
 
 def get_explanation_model():
     """Create a Gemini client lazily so app startup stays fast.
@@ -30,7 +31,9 @@ def get_explanation_model():
             "'google-genai' package with: pip install -U google-genai"
         ) from exc
 
-    return genai.Client(api_key=st.secrets["GEMINI_API_KEY"])
+    return genai.Client(
+        api_key=st.secrets["GEMINI_API_KEY"]
+    )
 
 
 def generate_explanation(
